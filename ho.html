@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Network Topology Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100vh;
+padding:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transform:translateX(80px);
+transition:all .7s ease;
+}
+
+.slide.active{
+opacity:1;
+transform:translateX(0);
+}
+
+.container{
+max-width:1200px;
+width:100%;
+}
+
+.two-col{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.title-slide{
+text-align:center;
+}
+
+h1{
+font-size:56px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#38bdf8,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+h2{
+font-size:30px;
+margin-bottom:20px;
+color:#7dd3fc;
+}
+
+p{
+font-size:20px;
+line-height:1.7;
+color:#e2e8f0;
+}
+
+ul{
+margin-top:20px;
+}
+
+li{
+font-size:20px;
+margin:12px 0;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+background:#111827;
+padding:28px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.06);
+box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+.badge{
+display:inline-block;
+padding:6px 14px;
+background:#2563eb;
+border-radius:20px;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.image-box{
+background:#111827;
+padding:20px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.05);
+box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+.image-box img{
+width:100%;
+border-radius:10px;
+}
+
+.slide-number{
+position:fixed;
+bottom:35px;
+right:40px;
+color:#94a3b8;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<section class="slide active">
+<div class="container title-slide">
+<div class="badge">ITC110 Packet Tracer Assignment</div>
+<h1>Network Topology Project</h1>
+<p>Design and configuration of a simulated computer network using Cisco Packet Tracer.</p>
+
+<p style="margin-top:40px;color:#94a3b8">
+Aqila Mohammadi • Lida Fakhri • Sara Ibrahimi • Zahra Zarrin
+<br><br>
+Instructor: Dr Ala | March 2026
+</p>
+</div>
+</section>
+
+<!-- Slide 2 -->
+<section class="slide">
+<div class="container two-col">
+
+<div>
+<h1>Network Topology</h1>
+<p>The topology shows how network devices are connected. A router links the wired LAN and the wireless WLAN networks while also connecting to a Metropolitan Area Network (MAN) that represents a larger city-wide network.</p>
+</div>
+
+<div class="image-box">
+<img src="./topology.jpg" alt="network topology">
+</div>
+
+</div>
+</section>
+
+<!-- Slide 3 -->
+<section class="slide">
+<div class="container">
+<h1>IP Addressing Scheme</h1>
+
+<div class="card-grid">
+
+<div class="card">
+<h2>LAN Network</h2>
+<p><b>Network:</b> 192.168.10.0 /24</p>
+<p><b>Gateway:</b> 192.168.10.1</p>
+<ul>
+<li>PC0</li>
+<li>PC1</li>
+<li>Web Server</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>WLAN Network</h2>
+<p><b>Network:</b> 192.168.20.0 /24</p>
+<p><b>Gateway:</b> 192.168.20.1</p>
+<ul>
+<li>Laptop0</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Slide 4 -->
+<section class="slide">
+<div class="container two-col">
+
+<div>
+<h1>Web Server</h1>
+<p>The server is configured as a web server by enabling HTTP service. This allows users inside the network to access the hosted website through a web browser.</p>
+</div>
+
+<div class="image-box">
+<img src="./web.jpg" alt="web server">
+</div>
+
+</div>
+</section>
+
+<!-- Slide 5 -->
+<section class="slide">
+<div class="container">
+<h1>Router Interface Configuration</h1>
+
+<div class="card-grid">
+
+<div class="card">
+<h2>LAN Interface</h2>
+<p>Interface: G0/0</p>
+<p>IP Address: 192.168.10.1</p>
+<p>Subnet Mask: 255.255.255.0</p>
+</div>
+
+<div class="card">
+<h2>WLAN Interface</h2>
+<p>Interface: G0/1</p>
+<p>IP Address: 192.168.20.1</p>
+<p>Subnet Mask: 255.255.255.0</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Slide 6 -->
+<section class="slide">
+<div class="container">
+<h1>WLAN Security</h1>
+<p>The wireless network is secured using WPA2-PSK authentication. Only users with the correct password are allowed to connect to the wireless network.</p>
+
+<ul>
+<li>Prevents unauthorized access</li>
+<li>Protects wireless communication</li>
+<li>Ensures secure device connections</li>
+</ul>
+</div>
+</section>
+
+<!-- Slide 7 -->
+<section class="slide">
+<div class="container two-col">
+
+<div>
+<h1>Firewall (ACL)</h1>
+<p>A basic firewall rule was configured on the router using an Access Control List (ACL). ACLs filter traffic and help control which data is allowed or denied in the network.</p>
+</div>
+
+<div class="image-box">
+<img src="./pc0.jpg" alt="firewall">
+</div>
+
+</div>
+</section>
+
+<!-- Slide 8 -->
+<section class="slide">
+<div class="container two-col">
+
+<div>
+<h1>Connectivity Test</h1>
+<p>Ping tests were performed between devices to verify communication across the network. Successful replies confirm that routing between LAN and WLAN networks works correctly.</p>
+</div>
+
+<div class="image-box">
+<img src="./io.jpg" alt="ping test">
+</div>
+
+</div>
+</section>
+
+<!-- Slide 9 -->
+<section class="slide">
+<div class="container">
+<h1>Metropolitan Area Network (MAN)</h1>
+<p>A Metropolitan Area Network connects multiple local networks across a city. In this project, the router connects to a MAN cloud representing the external network or the Internet.</p>
+</div>
+</section>
+
+<!-- Slide 10 -->
+<section class="slide">
+<div class="container">
+<h1>Reflection</h1>
+<p>This assignment helped us understand how routers, wireless networks, IP addressing, and firewall security work together to create a functional computer network.</p>
+</div>
+</section>
+
+<!-- Slide 11 -->
+<section class="slide">
+<div class="container title-slide">
+<h1>Thank You</h1>
+<p>Thank you for your attention.</p>
+<p style="margin-top:20px;color:#94a3b8">Questions?</p>
+</div>
+</section>
+
+<div class="slide-number" id="slideNumber"></div>
+
+<script>
+const slides=document.querySelectorAll('.slide')
+const number=document.getElementById('slideNumber')
+let current=0
+
+function showSlide(i){
+slides.forEach(s=>s.classList.remove('active'))
+slides[i].classList.add('active')
+number.innerText=`${i+1} / ${slides.length}`
+}
+
+function nextSlide(){
+if(current<slides.length-1){current++}
+showSlide(current)
+}
+
+function prevSlide(){
+if(current>0){current--}
+showSlide(current)
+}
+
+document.addEventListener('keydown',e=>{
+if(e.key==='ArrowRight'||e.key===' '){nextSlide()}
+if(e.key==='ArrowLeft'){prevSlide()}
+})
+
+showSlide(current)
+</script>
+
+</body>
+</html>
